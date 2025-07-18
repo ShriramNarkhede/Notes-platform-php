@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JTM Academic Hub</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./login-Register.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo" style="font-size: 40px;">&#128218; JTM Notes Hub</div>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="#" onclick="toggleModal('loginModal')">Login</a></li>
+      <li><a href="#" onclick="toggleModal('registerModal')">Register</a></li>
+      <li><a href="./admin_login.php">Admin Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Share Notes, Spread Knowledge.</h1>
+      <p>Welcome to the ultimate platform where students help each other by sharing notes, guides, and wisdom.</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature-card">
+      <h3>&#128218; Easy Upload</h3>
+      <p>Upload your notes in just a few clicks and make them accessible to everyone.</p>
+    </div>
+    <div class="feature-card">
+      <h3>&#128736; Admin Managed</h3>
+      <p> Easy Management of Notes and users by the Staff of the college </p>
+    </div>
+    <div class="feature-card">
+      <h3>&#128229; Easy Dowmload</h3>
+      <p>Download All the notes Required just a few clicks and make them accessible for yourself.</p>
+    </div>
+    <div class="feature-card">
+      <h3>&#127891; Community Driven</h3>
+      <p>Powered by students and Teachers for students. Share, and collaborate together.</p>
+    </div>
+  </section>
+
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <span class="close" onclick="toggleModal('loginModal')">&times;</span>
+    <h2>Welcome Back</h2>
+    <p>Please login to continue</p>
+    <form action="./login.php" method="POST">
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="registerModal">
+  <div class="modal-content">
+    <span class="close" onclick="toggleModal('registerModal')">&times;</span>
+    <h2>Register</h2>
+    <form action="./register.php" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button class="btn-primary" type="submit">Register</button>
+    </form>
+  </div>
+</div>
+
+
+  <script>
+    function toggleModal(id) {
+      const modal = document.getElementById(id);
+      modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Close modal on outside click
+    window.onclick = function(e) {
+      document.querySelectorAll('.modal').forEach(modal => {
+        if (e.target === modal) modal.style.display = 'none';
+      });
+    }
+  </script>
+ <footer>
+    <p>&copy; 2025 JTM Academic Hub </p>
+  </footer>
+</body>
+</html>
