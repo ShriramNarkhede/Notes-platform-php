@@ -36,8 +36,8 @@ if (isset($_POST['update'])) {
 <html>
 
 <head>
-    <title>Update User Data</title>
-</head>  
+    <title>Update User</title>
+</head>
 <style>
         body {
             font-family: 'Times New Roman', Times, serif;

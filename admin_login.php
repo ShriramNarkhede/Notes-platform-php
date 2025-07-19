@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
          
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['is_admin'] = $user['is_admin'];
-            $_SESSION['name'] = $user['name']; 
+            $_SESSION['name'] = $user['name'];
             header('Location: admin.php');
             exit();
         } else {
